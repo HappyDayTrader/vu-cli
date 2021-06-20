@@ -1,0 +1,27 @@
+{
+  "name": "vu-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "bin": {
+    "rr": "bin/main.js"
+  },
+  "scripts": {
+    "dev": "tsc -p tsconfig.json -w",
+    "watch": "nodemon build/main.js",
+    "build": "cross-env NODE_ENV=production tsc",
+    "clean": "shx rm -rf bin",
+    "format": "tsfmt -r --baseDir ./",
+    "postbuild": "npm link",
+    "prebuild": "run-s format clean",
+    "precommit": "run-s format"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
